@@ -4,14 +4,16 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestSelenium {
-
-	public static void main(String[] args) {
+	
+	@Test
+	public void testRouteSaoPauloCampinas() {
 
 		WebDriver driver = new FirefoxDriver();
 		
