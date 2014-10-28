@@ -15,6 +15,9 @@ import br.com.clickbus.response.ResponseCode;
 
 public class TestSelenium {
 	
+	
+	
+	private final long MILLISECONDS = 6000;
 	private FirefoxDriver driver;
 	private PopulateDataInHome populateDataInHome;
 	
@@ -25,18 +28,199 @@ public class TestSelenium {
 		this.populateDataInHome = new PopulateDataInHome(driver);
 		driver.get("http://www.clickbus.com.br");		
 	}
-//	
-//	@Test
-//	public void checkFooter(){
-//		this.checkFooterLinks(driver);
-//	}
+	
+	
 	
 	@Test
-	public void testRouteSaoPauloCampinas() {
+	public void testRouteSaoPauloCampinas() throws Throwable {
 		populateDataInHome.PopulateSearchHome("Sao Paulo, SP - TODOS", "Campinas, SP", "01/11/2014", "26/11/2014");
 		
-		assertTrue(populateDataInHome.existResult());
+		Thread.sleep(MILLISECONDS);
+		
+		if (populateDataInHome.existResult()) {
+			
+			assertTrue(true);
+			driver.findElement(By.xpath("(//button[@type='button'])[6]")).click();
+			Thread.sleep(MILLISECONDS);
+			
+			if (populateDataInHome.existResultAfterChooseGoing()) {
+				
+				assertTrue(true);
+				driver.findElement(By.xpath("(//button[@type='button'])[111]")).click();
+				Thread.sleep(MILLISECONDS);
+				this.finalize();
+			}else{
+				assertTrue(false);
+			}
+		}else{
+			if (populateDataInHome.existNoOfferRouteResult()) {
+				
+				System.out.println("No exist route for this search");
+				assertTrue(true);
+				this.finalize();
+			}else{
+				
+				assertTrue(false);
+				this.finalize();
+			}
+		}
+		
 	}
+	
+	@Test
+	public void testRouteSaoPauloSaoJoseDosCampos() throws Throwable {
+		populateDataInHome.PopulateSearchHome("Sao Paulo, SP - TODOS", "Sao Jose dos Campos, SP", "01/11/2014", "26/11/2014");
+		
+		Thread.sleep(MILLISECONDS);
+		
+		if (populateDataInHome.existResult()) {
+			
+			assertTrue(true);
+			driver.findElement(By.xpath("(//button[@type='button'])[6]")).click();
+			Thread.sleep(MILLISECONDS);
+			
+			if (populateDataInHome.existResultAfterChooseGoing()) {
+				
+				assertTrue(true);
+				driver.findElement(By.xpath("(//button[@type='button'])[111]")).click();
+				Thread.sleep(MILLISECONDS);
+				this.finalize();
+			}else{
+				assertTrue(false);
+			}
+		}else{
+			if (populateDataInHome.existNoOfferRouteResult()) {
+				
+				System.out.println("No exist route for this search");
+				assertTrue(true);
+				this.finalize();
+			}else{
+				
+				assertTrue(false);
+				this.finalize();
+			}
+		}
+		
+	}
+	
+	
+	@Test
+	public void testRouteCampinasAmericana() throws Throwable {
+		populateDataInHome.PopulateSearchHome("Campinas, SP", "Americana, SP", "01/11/2014", "26/11/2014");
+		
+		Thread.sleep(MILLISECONDS);
+		
+		if (populateDataInHome.existResult()) {
+			
+			assertTrue(true);
+			driver.findElement(By.xpath("(//button[@type='button'])[5]")).click();
+			Thread.sleep(MILLISECONDS);
+			
+			if (populateDataInHome.existResultAfterChooseGoing()) {
+				
+				assertTrue(true);
+				driver.findElement(By.cssSelector("button.searchResultsSubmitButton.searchResultsSelectButton")).click();
+				Thread.sleep(MILLISECONDS);
+				this.finalize();
+			}else{
+				assertTrue(false);
+			}
+		}else{
+			if (populateDataInHome.existNoOfferRouteResult()) {
+				
+				System.out.println("No exist route for this search");
+				assertTrue(true);
+				this.finalize();
+			}else{
+				
+				assertTrue(false);
+				this.finalize();
+			}
+		}
+		
+	}
+	
+	
+	@Test
+	public void testRouteSaoPauloSantos() throws Throwable {
+		populateDataInHome.PopulateSearchHome("Sao Paulo, SP - TODOS", "Santos, SP", "01/11/2014", "26/11/2014");
+		
+		Thread.sleep(MILLISECONDS);
+		
+		if (populateDataInHome.existResult()) {
+			
+			assertTrue(true);
+			driver.findElement(By.xpath("(//button[@type='button'])[5]")).click();
+			Thread.sleep(MILLISECONDS);
+			
+			if (populateDataInHome.existResultAfterChooseGoing()) {
+				
+				assertTrue(true);
+				driver.findElement(By.cssSelector("button.searchResultsSubmitButton.searchResultsSelectButton")).click();
+				Thread.sleep(MILLISECONDS);
+				this.finalize();
+			}else{
+				assertTrue(false);
+			}
+		}else{
+			if (populateDataInHome.existNoOfferRouteResult()) {
+				
+				System.out.println("No exist route for this search");
+				assertTrue(true);
+				this.finalize();
+			}else{
+				
+				assertTrue(false);
+				this.finalize();
+			}
+		}
+		
+	}
+	
+	
+	@Test
+	public void testRouteSaoCaetanoDoSulCampinas() throws Throwable {
+		populateDataInHome.PopulateSearchHome("Sao Caetano do Sul, SP", "Campinas, SP", "01/11/2014", "26/11/2014");
+		
+		Thread.sleep(MILLISECONDS);
+		
+		if (populateDataInHome.existResult()) {
+			
+			assertTrue(true);
+			driver.findElement(By.xpath("(//button[@type='button'])[5]")).click();
+			Thread.sleep(MILLISECONDS);
+			
+			if (populateDataInHome.existResultAfterChooseGoing()) {
+				
+				assertTrue(true);
+				driver.findElement(By.cssSelector("button.searchResultsSubmitButton.searchResultsSelectButton")).click();
+				Thread.sleep(MILLISECONDS);
+				this.finalize();
+			}else{
+				assertTrue(false);
+			}
+		}else{
+			if (populateDataInHome.existNoOfferRouteResult()) {
+				
+				System.out.println("No exist route for this search");
+				assertTrue(true);
+				this.finalize();
+			}else{
+				
+				assertTrue(false);
+				this.finalize();
+			}
+		}
+		
+	}
+	
+	
+	@Test
+	public void checkFooter() throws Throwable{
+		this.checkFooterLinks(driver);
+		this.finalize();
+	}
+	
 	
 	public void finilize(){
 		driver.close();		

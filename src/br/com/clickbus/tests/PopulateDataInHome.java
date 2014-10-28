@@ -35,8 +35,22 @@ public class PopulateDataInHome {
 	
 	public boolean existResult(){
 		
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
 		return driver.getPageSource().contains("Escolher Ida");
+		
+	}
+	
+	public boolean existNoOfferRouteResult(){
+		
+		
+		return driver.getPageSource().contains("Desculpe, ainda não oferecemos essa rota.");
+		
+	}
+	
+	public boolean existResultAfterChooseGoing(){
+		
+		
+		return driver.getPageSource().contains("Escolher Volta");
 		
 	}
 
