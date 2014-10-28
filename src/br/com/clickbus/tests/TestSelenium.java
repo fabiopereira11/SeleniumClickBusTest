@@ -218,7 +218,7 @@ public class TestSelenium {
 	
 	@Test
 	public void checkFooter() throws Throwable{
-		this.checkFooterLinks(driver);
+		this.checkFooterLinks();
 		this.finalize();
 	}
 	
@@ -228,7 +228,7 @@ public class TestSelenium {
 	}
 	
 	
-	public void checkFooterLinks(WebDriver driver){
+	public void checkFooterLinks(){
 		
 		int counterLinkBroken = 0;
 		int counterLinkSuccess = 0;
