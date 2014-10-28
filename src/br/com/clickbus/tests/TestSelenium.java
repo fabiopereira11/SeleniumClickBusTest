@@ -18,6 +18,7 @@ public class TestSelenium {
 	
 	
 	private final long MILLISECONDS = 6000;
+	private final String NO_ROUTE = "No exist route for this search";
 	private FirefoxDriver driver;
 	private PopulateDataInHome populateDataInHome;
 	
@@ -55,7 +56,7 @@ public class TestSelenium {
 		}else{
 			if (populateDataInHome.existNoOfferRouteResult()) {
 				
-				System.out.println("No exist route for this search");
+				System.out.println(NO_ROUTE);
 				assertTrue(true);
 				this.finalize();
 			}else{
@@ -91,7 +92,7 @@ public class TestSelenium {
 		}else{
 			if (populateDataInHome.existNoOfferRouteResult()) {
 				
-				System.out.println("No exist route for this search");
+				System.out.println(NO_ROUTE);
 				assertTrue(true);
 				this.finalize();
 			}else{
@@ -128,7 +129,7 @@ public class TestSelenium {
 		}else{
 			if (populateDataInHome.existNoOfferRouteResult()) {
 				
-				System.out.println("No exist route for this search");
+				System.out.println(NO_ROUTE);
 				assertTrue(true);
 				this.finalize();
 			}else{
@@ -165,7 +166,7 @@ public class TestSelenium {
 		}else{
 			if (populateDataInHome.existNoOfferRouteResult()) {
 				
-				System.out.println("No exist route for this search");
+				System.out.println(NO_ROUTE);
 				assertTrue(true);
 				this.finalize();
 			}else{
@@ -202,7 +203,7 @@ public class TestSelenium {
 		}else{
 			if (populateDataInHome.existNoOfferRouteResult()) {
 				
-				System.out.println("No exist route for this search");
+				System.out.println(NO_ROUTE);
 				assertTrue(true);
 				this.finalize();
 			}else{
